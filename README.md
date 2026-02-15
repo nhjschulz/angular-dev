@@ -13,7 +13,7 @@ environment helpers under the `podman/` subdirectory.
 Build the development podman image (defaults shown):
 
 ```bash
-podman build -t debian-angular-dev:bookworm -f podman/Dockerfile
+podman build -t debian-angular-dev:bookworm -f podman/Dockerfile podman
 ```
 
 Run the development container (mounts current repo into `/workspace` and
@@ -21,9 +21,21 @@ creates a matching non-root user inside the container):
 
 ```bash
 podman run --rm -it \
-    -v "$PWD":/workspace \
+    -v .:/workspace \
     -p 4200:4200 \
     debian-angular-dev:bookworm
+```
+
+There are also make scripts inside the podman folder to run the above
+commands.
+
+## Serving Examples
+
+Make sure to add the following `--host` option when serving an application from podman. It is needed to listen on all network
+interfaces.
+
+ ```bash
+ng serve --host 0.0.0.0
 ```
 
 ## Contributing
