@@ -18,7 +18,7 @@ build:
 shell:
 	podman run \
 		--rm -it \
-  		-v "$PWD":/workspace \
+  		-v ..:/workspace \
   		-p 4200:4200  \
   		$(CONTAINER_TAG)
 

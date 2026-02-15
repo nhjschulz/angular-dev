@@ -16,6 +16,7 @@ RUN apt-get update \
 	   sudo \
 	   adduser \
 	   gnupg \
+	   dos2unix \
 	   lsb-release
 
 # Install Node.js LTS and Angular CLI
@@ -35,6 +36,7 @@ WORKDIR /workspace
 
 # Copy entrypoint which will create the developer user at container start
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN dos2unix /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Expose default Angular dev server port

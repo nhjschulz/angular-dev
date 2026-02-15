@@ -13,7 +13,7 @@ environment helpers under the `podman/` subdirectory.
 Build the development podman image (defaults shown):
 
 ```bash
-podman build -t debian-angular-dev:bookworm -f podman/Dockerfile
+podman build -t debian-angular-dev:bookworm -f podman/Dockerfile podman
 ```
 
 Run the development container (mounts current repo into `/workspace` and
@@ -21,10 +21,13 @@ creates a matching non-root user inside the container):
 
 ```bash
 podman run --rm -it \
-    -v "$PWD":/workspace \
+    -v .:/workspace \
     -p 4200:4200 \
     debian-angular-dev:bookworm
 ```
+
+There aew also make scripts inside the podman folder to run the above
+commands.
 
 ## Contributing
 
