@@ -26,8 +26,17 @@ podman run --rm -it \
     debian-angular-dev:bookworm
 ```
 
-There aew also make scripts inside the podman folder to run the above
+There are also make scripts inside the podman folder to run the above
 commands.
+
+## Serving Examples
+
+Make sure to add the following `--host` option when serving an application from podman. It is needed to listen on all network
+interfaces.
+
+ ```bash
+ng serve --host 0.0.0.0
+```
 
 ## Contributing
 
