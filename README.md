@@ -31,10 +31,11 @@ commands.
 
 ## Serving Examples
 
-Make sure to add the following `--host` option when serving an application from podman. It is needed to listen on all network
-interfaces.
+Enter the example directory to run inside the development container.
+Make sure to add the following `--host` option when serving an application
+from inside the container. It is needed to listen on all network interfaces.
 
- ```bash
+```bash
 ng serve --host 0.0.0.0
 ```
 
