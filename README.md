@@ -2,11 +2,12 @@
 
 Angular-dev is a lightweight repository to capture information, tooling and
 best-practices for Angular development. It includes Docker-based development
-environment helpers under the `podman/` subdirectory.
+environment helpers under the `container/` subdirectory.
 
 ## Features
 
-- Debian Bookworm base image with Node.js and Angular CLI
+- Debian Bookworm base container image with Node.js and Angular CLI
+- Develop an example app step by step
 
 ## Quickstart
 
